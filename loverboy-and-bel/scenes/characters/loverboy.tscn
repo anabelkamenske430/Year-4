@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cftclvctilfi1"]
+
+[node name="Loverboy" type="CharacterBody2D" unique_id=985468098]
+
+[node name="PlaceholderSprite" type="Polygon2D" parent="." unique_id=1899896196]
+polygon = PackedVector2Array(38, 349, 30, 35, 768, 43, 762, 351)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1345938800]
+position = Vector2(-618, 0)
+polygon = PackedVector2Array(754, 55, 768, 347, 1264, 341, 1266, 41)
