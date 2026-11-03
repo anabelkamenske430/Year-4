@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://dy2q42bi80go7"]
 
 [ext_resource type="PackedScene" uid="uid://cftclvctilfi1" path="res://scenes/characters/loverboy.tscn" id="1_xgkye"]
+[ext_resource type="PackedScene" uid="uid://bfrjo0u7e4fq" path="res://scenes/characters/bel.tscn" id="2_bfhv8"]
 
 [node name="Node2D" type="Node2D" unique_id=1719918808]
 rotation = -0.66152704
 scale = Vector2(1.0046605, 0.9987301)
 
 [node name="Loverboy" parent="." unique_id=985468098 instance=ExtResource("1_xgkye")]
-position = Vector2(-2.578659, 253.99478)
+position = Vector2(-124.99124, 319.59424)
 rotation = 0.6678543
+scale = Vector2(0.34828475, 0.5801167)
+
+[node name="Bel" parent="." unique_id=1496050138 instance=ExtResource("2_bfhv8")]
+position = Vector2(489.0501, 541.6319)

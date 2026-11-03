@@ -10,4 +10,18 @@ polygon = PackedVector2Array(38, 349, 30, 35, 768, 43, 762, 351)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1345938800]
 position = Vector2(-618, 0)
-polygon = PackedVector2Array(754, 55, 768, 347, 1264, 341, 1266, 41)
+polygon = PackedVector2Array(649, 38, 667, 342, 1368, 337, 1372, 48)
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1567082541]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InteractionArea" unique_id=547021739]
+position = Vector2(395.6307, 160.84134)
+scale = Vector2(4.5284095, 2.932692)
+polygon = PackedVector2Array(-78.09159, -39.840984, 74.27979, -34.044266, 74.72144, 55.634434, -9, 58, -74.77917, 57.680332, -77.870766, -1.6508179)
+
+[node name="Polygon2D" type="Polygon2D" parent="InteractionArea/CollisionPolygon2D" unique_id=1072929309]
+position = Vector2(-154.6962, -183.98396)
+scale = Vector2(0.2777055, 0.53118795)
+color = Color(1, 1, 1, 0)
+offset = Vector2(67, 41)
+polygon = PackedVector2Array(503.06787, 164.88312, 255.76443, 187.99248, 140.46216, 196.97945, 129.32953, 368.3738, 196.9205, 473.64972, 518.9717, 497.401, 837.84204, 456.31775, 862.49286, 205.32448, 697.889, 164.88312)

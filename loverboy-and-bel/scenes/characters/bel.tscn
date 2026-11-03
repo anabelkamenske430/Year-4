@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bfrjo0u7e4fq"]
+
+[ext_resource type="Script" uid="uid://c14gdgvacmcuq" path="res://scripts/bel.gd" id="1_0sm6b"]
+
+[node name="Bel" type="Area2D" unique_id=1496050138]
+script = ExtResource("1_0sm6b")
+
+[node name="PlaceholderSprite" type="Polygon2D" parent="." unique_id=768099089]
+color = Color(0, 0.63559306, 0.63590753, 1)
+polygon = PackedVector2Array(234, 91, 144, 121, 120, 165, 124, 227, 152, 275, 252, 293, 320, 241, 342, 173, 310, 125, 256, 91)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=593946015]
+position = Vector2(1, -12)
+polygon = PackedVector2Array(205, 119, 158, 139, 129, 191, 157, 275, 230, 292, 306, 257, 335, 185, 280, 122, 242, 106)
