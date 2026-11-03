@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://cftclvctilfi1"]
 
+[ext_resource type="Script" uid="uid://dplibxvuifqnj" path="res://scripts/loverboy.gd" id="1_1f8fr"]
+
 [node name="Loverboy" type="CharacterBody2D" unique_id=985468098]
+script = ExtResource("1_1f8fr")
 
 [node name="PlaceholderSprite" type="Polygon2D" parent="." unique_id=1899896196]
 polygon = PackedVector2Array(38, 349, 30, 35, 768, 43, 762, 351)
