@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cftclvctilfi1" path="res://scenes/characters/loverboy.tscn" id="1_xgkye"]
 [ext_resource type="PackedScene" uid="uid://bfrjo0u7e4fq" path="res://scenes/characters/bel.tscn" id="2_bfhv8"]
+[ext_resource type="PackedScene" uid="uid://cqm1pe1guswge" path="res://scenes/ui/dialogue_box.tscn" id="3_kljt5"]
 
 [node name="Node2D" type="Node2D" unique_id=1719918808]
 rotation = -0.66152704
@@ -13,4 +14,11 @@ rotation = 0.6678543
 scale = Vector2(0.34828475, 0.5801167)
 
 [node name="Bel" parent="." unique_id=1496050138 instance=ExtResource("2_bfhv8")]
-position = Vector2(489.0501, 541.6319)
+position = Vector2(488.17502, 546.02234)
+
+[node name="DialogueBox" parent="." unique_id=497366372 instance=ExtResource("3_kljt5")]
+offset_left = -308.53558
+offset_top = 406.7953
+offset_right = -308.53317
+offset_bottom = 406.7953
+rotation = 0.65875274

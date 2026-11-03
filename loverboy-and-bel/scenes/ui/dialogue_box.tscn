@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cqm1pe1guswge"]
+
+[ext_resource type="Script" uid="uid://cjfvgv1hbx85h" path="res://scripts/dialogue_box.gd" id="1_xg44k"]
+
+[node name="DialogueBox" type="Control" unique_id=497366372]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xg44k")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=451374946]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.80600005
+anchor_bottom = 0.80600005
+offset_left = 17.0
+offset_top = -0.2880249
+offset_right = 1134.0
+offset_bottom = 111.711975
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1843174960]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=480321183]
+layout_mode = 2
+
+[node name="SpeakerLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1067648733]
+layout_mode = 2
+text = "BEL"
+
+[node name="DialogueLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=248316381]
+custom_minimum_size = Vector2(0.1, 0.1)
+layout_mode = 2
+text = "Well this is awkward"
+autowrap_mode = 1
+
+[node name="ContinueLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1977006229]
+layout_mode = 2
+text = "[E] Continue"
