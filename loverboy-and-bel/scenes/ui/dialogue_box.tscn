@@ -29,14 +29,11 @@ layout_mode = 2
 
 [node name="SpeakerLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1067648733]
 layout_mode = 2
-text = "BEL"
 
 [node name="DialogueLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=248316381]
 custom_minimum_size = Vector2(0.1, 0.1)
 layout_mode = 2
-text = "Well this is awkward"
 autowrap_mode = 1
 
 [node name="ContinueLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1977006229]
 layout_mode = 2
-text = "[E] Continue"

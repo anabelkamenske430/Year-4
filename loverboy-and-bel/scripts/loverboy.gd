@@ -14,10 +14,22 @@ func _physics_process(_delta):
 	move_and_slide()
 
 	if Input.is_action_just_pressed("interact"):
+
+		var dialogue_box = get_tree().current_scene.get_node("DialogueBox")
+
+		if dialogue_box.visible:
+			return
+
 		check_interaction()
 
-
 func check_interaction():
+	print("Player Checking Interaction")
+	var dialogue_box = get_tree().current_scene.get_node("DialogueBox")
+
+	if dialogue_box.just_closed:
+		dialogue_box.just_closed = false
+		return
+
 	var areas = $InteractionArea.get_overlapping_areas()
 
 	for area in areas:
