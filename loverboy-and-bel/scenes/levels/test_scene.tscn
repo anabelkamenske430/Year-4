@@ -9,16 +9,17 @@ rotation = -0.66152704
 scale = Vector2(1.0046605, 0.9987301)
 
 [node name="Loverboy" parent="." unique_id=985468098 instance=ExtResource("1_xgkye")]
-position = Vector2(-124.99124, 319.59424)
+position = Vector2(-35.199936, 219.87747)
 rotation = 0.6678543
 scale = Vector2(0.34828475, 0.5801167)
 
 [node name="Bel" parent="." unique_id=1496050138 instance=ExtResource("2_bfhv8")]
-position = Vector2(488.17502, 546.02234)
+position = Vector2(292.3078, 298.7212)
+rotation = 0.6064555
 
 [node name="DialogueBox" parent="." unique_id=497366372 instance=ExtResource("3_kljt5")]
-offset_left = -308.53558
-offset_top = 406.7953
-offset_right = -308.53317
-offset_bottom = 406.7953
+offset_left = -310.2748
+offset_top = 392.7437
+offset_right = -310.2724
+offset_bottom = 392.7437
 rotation = 0.65875274
