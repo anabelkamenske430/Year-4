@@ -57,3 +57,7 @@ func start_hour_four():
 
 func finish_first_date():
 	print("FIRST DATE COMPLETE")
+	$AchievementPopup.show_achievement(
+		"STILL HERE",
+		"Survived a four-hour first date."
+	)

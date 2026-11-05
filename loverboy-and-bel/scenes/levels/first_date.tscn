@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bfrjo0u7e4fq" path="res://scenes/characters/bel.tscn" id="1_xx8ys"]
 [ext_resource type="PackedScene" uid="uid://cftclvctilfi1" path="res://scenes/characters/loverboy.tscn" id="2_fpm3c"]
 [ext_resource type="PackedScene" uid="uid://cqm1pe1guswge" path="res://scenes/ui/dialogue_box.tscn" id="3_fpm3c"]
+[ext_resource type="PackedScene" uid="uid://bn0xvdy32aunp" path="res://scenes/ui/achievement_popup.tscn" id="5_si2br"]
 
 [node name="FirstDate" type="Node2D" unique_id=1761486837]
 script = ExtResource("1_aju64")
@@ -39,3 +40,9 @@ offset_left = -1.0
 offset_top = 534.0
 offset_right = -1.0
 offset_bottom = 534.0
+
+[node name="AchievementPopup" parent="." unique_id=1085326658 instance=ExtResource("5_si2br")]
+offset_left = 8.0
+offset_top = 24.0
+offset_right = 8.0
+offset_bottom = 24.0
