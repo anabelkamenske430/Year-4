@@ -9,6 +9,8 @@ var just_closed = false
 
 func _ready():
 	hide()
+	
+	DialogueManager.register_dialogue_box(self)
 
 func start_dialogue(lines):
 	dialogue_lines = lines
@@ -40,7 +42,7 @@ func hide_dialogue():
 
 	dialogue_lines = []
 	current_index = 0
-	just_closed = true
+	DialogueManager.mark_dialogue_closed()
 
 func _unhandled_input(event):
 	if not visible:
