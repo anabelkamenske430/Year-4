@@ -35,5 +35,9 @@ custom_minimum_size = Vector2(0.1, 0.1)
 layout_mode = 2
 autowrap_mode = 1
 
+[node name="ChoiceContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1725101725]
+visible = false
+layout_mode = 2
+
 [node name="ContinueLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1977006229]
 layout_mode = 2
