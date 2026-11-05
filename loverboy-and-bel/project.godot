@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="LoverboyAndBel"
-run/main_scene="uid://dy2q42bi80go7"
+run/main_scene="uid://t5qnu73yxwin"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
