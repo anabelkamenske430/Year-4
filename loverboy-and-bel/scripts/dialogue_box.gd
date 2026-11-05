@@ -48,3 +48,6 @@ func _unhandled_input(event):
 
 	if event.is_action_pressed("interact"):
 		advance_dialogue()
+
+func is_dialogue_active():
+	return visible
