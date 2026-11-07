@@ -20,15 +20,42 @@ static func get_dialogue() -> Array:
 			"choices": [
 				{
 					"text": "Not at all.",
-					"response": "Not at all."
+					"branch": [
+						{
+							"speaker": "Loverboy",
+							"text": "Not at all."
+						},
+						{
+							"speaker": "Bel",
+							"text": "Wow. One of us should be worried."
+						}
+					]
 				},
 				{
 					"text": "A perfectly normal amount.",
-					"response": "A perfectly normal amount."
+					"branch": [
+						{
+							"speaker": "Loverboy",
+							"text": "A perfectly normal amount."
+						},
+						{
+							"speaker": "Bel",
+							"text": "Good. That means you're human."
+						}
+					]
 				},
 				{
 					"text": "I'm considering leaving.",
-					"response": "I'm considering leaving."
+					"branch": [
+						{
+							"speaker": "Loverboy",
+							"text": "I'm considering leaving."
+						},
+						{
+							"speaker": "Bel",
+							"text": "At least wait until after dinner."
+						}
+					]
 				}
 			]
 		},

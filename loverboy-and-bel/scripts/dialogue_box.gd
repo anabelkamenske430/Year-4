@@ -95,15 +95,14 @@ func select_choice():
 	choices_active = false
 	hide_choices()
 
-	# For our first version, the selected choice determines
-	# Loverboy's dialogue response.
-	speaker_label.text = "Loverboy"
-	dialogue_label.text = choice["response"]
+	var branch = choice["branch"]
 
-	continue_label.show()
+	for i in range(branch.size() - 1, -1, -1):
+		dialogue_lines.insert(current_index + 1, branch[i])
 
-	# Remove the choice property so E won't reopen the choices.
 	dialogue_lines[current_index].erase("choices")
+
+	advance_dialogue()
 
 
 func hide_choices():
