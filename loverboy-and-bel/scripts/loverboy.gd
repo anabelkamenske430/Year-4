@@ -64,3 +64,6 @@ func update_animation(direction: Vector2):
 			animated_sprite.play("walk_up")
 		else:
 			animated_sprite.play("walk_down")
+
+func move_to_position(target_position):
+	global_position = target_position

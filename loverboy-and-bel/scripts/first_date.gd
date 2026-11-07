@@ -7,6 +7,9 @@ var story_step = 0
 func _ready():
 	DialogueManager.dialogue_finished.connect(_on_dialogue_finished)
 
+func move_to_table():
+	$Loverboy.global_position = $LoverboySeatPosition.global_position
+	$Bel.global_position = $BelSeatPosition.global_position
 
 func _on_dialogue_finished():
 	match story_step:

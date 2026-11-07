@@ -126,6 +126,9 @@ func advance_dialogue():
 func hide_dialogue():
 	print("Hiding Dialogue")
 
+	# Move characters before closing dialogue
+	get_tree().current_scene.move_to_table()
+
 	hide()
 
 	dialogue_lines = []

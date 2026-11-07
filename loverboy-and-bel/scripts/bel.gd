@@ -24,3 +24,6 @@ func get_dialogue() -> Array:
 					"text": "Well... this is awkward."
 				}
 			]
+
+func move_to_position(target_position):
+	global_position = target_position

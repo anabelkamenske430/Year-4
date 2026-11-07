@@ -12,6 +12,7 @@ script = ExtResource("1_aju64")
 [node name="Environment" type="Node2D" parent="." unique_id=65208877]
 
 [node name="Floor" type="Polygon2D" parent="Environment" unique_id=1087986955]
+position = Vector2(2, -5)
 color = Color(0.36078432, 0.2901961, 0.23921569, 1)
 polygon = PackedVector2Array(-6, 2, -15, 664, 1164, 669, 1173, -16)
 
@@ -20,6 +21,7 @@ color = Color(0.2, 0.1764706, 0.16470589, 1)
 polygon = PackedVector2Array(2, 74, 1154, 77, 1153, -11, 3, -8)
 
 [node name="Table" type="StaticBody2D" parent="Environment" unique_id=1589556329]
+position = Vector2(1, -4)
 
 [node name="Polygon2D" type="Polygon2D" parent="Environment/Table" unique_id=1320511774]
 color = Color(0.4392157, 0.2901961, 0.19607843, 1)
@@ -29,11 +31,11 @@ polygon = PackedVector2Array(475, 296, 476, 414, 647, 417, 650, 295)
 polygon = PackedVector2Array(470, 288, 469, 418, 653, 421, 654, 288)
 
 [node name="Bel" parent="." unique_id=1496050138 instance=ExtResource("1_xx8ys")]
-position = Vector2(154, 69)
+position = Vector2(1030, 510)
 dialogue_type = "first_date"
 
 [node name="Loverboy" parent="." unique_id=985468098 instance=ExtResource("2_fpm3c")]
-position = Vector2(-549, 303)
+position = Vector2(229, 560)
 
 [node name="DialogueBox" parent="." unique_id=497366372 instance=ExtResource("3_fpm3c")]
 offset_left = -1.0
@@ -42,7 +44,18 @@ offset_right = -1.0
 offset_bottom = 534.0
 
 [node name="AchievementPopup" parent="." unique_id=1085326658 instance=ExtResource("5_si2br")]
-offset_left = 8.0
-offset_top = 24.0
-offset_right = 8.0
-offset_bottom = 24.0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -4.0
+offset_top = -67.0
+offset_right = -4.0
+offset_bottom = -67.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="LoverboySeatPosition" type="Marker2D" parent="." unique_id=1634043153]
+position = Vector2(563, 449)
+
+[node name="BelSeatPosition" type="Marker2D" parent="." unique_id=1285744900]
+position = Vector2(558, 256)
