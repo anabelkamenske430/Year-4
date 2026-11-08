@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://c24u25k0ua2jf"]
+
+[ext_resource type="Script" uid="uid://bemtvtknf1j5y" path="res://scripts/title_screen.gd" id="1_upj3s"]
+[ext_resource type="Texture2D" uid="uid://compwsg4gdsqu" path="res://assets/scenes/title_screen.jpg" id="2_gxyay"]
+
+[node name="TitleScreen" type="Control" unique_id=899643329]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1162.0
+offset_bottom = 653.0
+script = ExtResource("1_upj3s")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=10856239]
+layout_mode = 0
+offset_left = -47.0
+offset_right = 1158.0
+offset_bottom = 665.0
+texture = ExtResource("2_gxyay")
+
+[node name="TitleLable" type="Label" parent="." unique_id=1027862598]
+layout_mode = 0
+offset_left = 332.0
+offset_top = 168.0
+offset_right = 799.0
+offset_bottom = 336.0
+theme_override_font_sizes/font_size = 50
+text = "The Anniversary 
+Game"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="." unique_id=1155404339]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 555.0
+offset_right = 666.0
+offset_bottom = 609.0
+theme_override_font_sizes/font_size = 29
+text = "Begin Our Story
+"
+
+[node name="QuitButton" type="Button" parent="." unique_id=1331347704]
+layout_mode = 0
+offset_left = 1012.0
+offset_top = 570.0
+offset_right = 1132.0
+offset_bottom = 622.0
+theme_override_font_sizes/font_size = 29
+text = "Quit
+"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
