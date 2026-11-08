@@ -61,7 +61,8 @@ static func get_dialogue() -> Array:
 		},
 		{
 			"speaker": "Bel",
-			"text": "Well... let's see how this goes."
+			"text": "Well... let's see how this goes.",
+			"event": "sit_at_table"
 		}
 	]
 

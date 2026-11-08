@@ -3,13 +3,17 @@ extends Node2D
 const FirstDateDialogue = preload("res://dialogue/first_date_dialogue.gd")
 
 var story_step = 0
+var target_position = null
 
 func _ready():
 	DialogueManager.dialogue_finished.connect(_on_dialogue_finished)
 
 func move_to_table():
-	$Loverboy.global_position = $LoverboySeatPosition.global_position
+	$Loverboy.move_to_target(
+		$LoverboySeatPosition.global_position
+	)
 	$Bel.global_position = $BelSeatPosition.global_position
+
 
 func _on_dialogue_finished():
 	match story_step:

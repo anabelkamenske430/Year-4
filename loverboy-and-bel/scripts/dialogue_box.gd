@@ -26,18 +26,24 @@ func start_dialogue(lines):
 	show()
 	show_current_line()
 
-
 func show_current_line():
 	var line = dialogue_lines[current_index]
 
 	speaker_label.text = line["speaker"]
 	dialogue_label.text = line["text"]
 
+	if line.has("event"):
+
+		match line["event"]:
+
+			"sit_at_table":
+				print("sit at table thrown")
+				get_tree().current_scene.move_to_table()
+
 	if line.has("choices"):
 		show_choices(line["choices"])
 	else:
 		hide_choices()
-
 
 func show_choices(choices):
 	choices_active = true
