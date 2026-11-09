@@ -3,6 +3,23 @@ extends Area2D
 const FirstDateDialogue = preload("res://dialogue/first_date_dialogue.gd")
 
 @export var dialogue_type: String = "test"
+@export var move_speed: float = 200.0
+
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
+var target_position: Vector2
+var is_moving: bool = false
+var last_direction: Vector2 = Vector2.DOWN
+
+
+func _ready():
+	target_position = global_position
+	animated_sprite.play("idle")
+
+
+func _process(delta):
+	if is_moving:
+		move_toward_target(delta)
 
 
 func interact():
@@ -25,5 +42,44 @@ func get_dialogue() -> Array:
 				}
 			]
 
-func move_to_position(target_position):
-	global_position = target_position
+
+func move_to_position(new_target_position: Vector2):
+	target_position = new_target_position
+	is_moving = true
+
+
+func move_toward_target(delta):
+	var direction = global_position.direction_to(target_position)
+
+	if global_position.distance_to(target_position) < 2.0:
+		global_position = target_position
+		is_moving = false
+		animated_sprite.play("idle")
+		return
+
+	last_direction = direction
+	update_walk_animation(direction)
+
+	global_position = global_position.move_toward(
+		target_position,
+		move_speed * delta
+	)
+
+
+func update_walk_animation(direction: Vector2):
+	if abs(direction.x) > abs(direction.y):
+		animated_sprite.play("walk_side")
+
+		# Assuming your walk_side frames face right
+		if direction.x > 0:
+			animated_sprite.flip_h = true
+		else:
+			animated_sprite.flip_h = false
+
+	elif direction.y < 0:
+		animated_sprite.flip_h = false
+		animated_sprite.play("walk_up")
+
+	else:
+		animated_sprite.flip_h = false
+		animated_sprite.play("walk_down")

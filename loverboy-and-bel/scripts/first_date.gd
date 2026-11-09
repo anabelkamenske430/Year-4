@@ -12,7 +12,9 @@ func move_to_table():
 	$Loverboy.move_to_target(
 		$LoverboySeatPosition.global_position
 	)
-	$Bel.global_position = $BelSeatPosition.global_position
+	$Bel.move_to_position(
+		$BelSeatPosition.global_position
+	)
 
 
 func _on_dialogue_finished():
