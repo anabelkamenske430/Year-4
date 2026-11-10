@@ -4,6 +4,7 @@ extends Control
 @onready var dialogue_label = $PanelContainer/MarginContainer/VBoxContainer/DialogueLabel
 @onready var choice_container = $PanelContainer/MarginContainer/VBoxContainer/ChoiceContainer
 @onready var continue_label = $PanelContainer/MarginContainer/VBoxContainer/ContinueLabel
+@onready var choice_prompt_label = $PanelContainer/MarginContainer/VBoxContainer/ChoicePromptLabel
 
 var dialogue_lines = []
 var current_index = 0
@@ -17,7 +18,7 @@ func _ready():
 	choice_container.hide()
 
 	DialogueManager.register_dialogue_box(self)
-
+	choice_prompt_label.hide()
 
 func start_dialogue(lines):
 	dialogue_lines = lines
@@ -50,25 +51,23 @@ func show_choices(choices):
 	selected_choice = 0
 
 	continue_label.hide()
+	choice_prompt_label.show()
 	choice_container.show()
 
-	# Remove choices from the previous dialogue.
 	for child in choice_container.get_children():
 		child.queue_free()
 
-	# Create a label for each choice.
 	for choice in choices:
 		var choice_label = Label.new()
 
 		choice_label.text = choice["text"]
-		# Make each choice use the full available width.
 		choice_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		# Wrap longer choices instead of squishing them.
 		choice_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-		# Give each option some breathing room.
-		choice_label.custom_minimum_size.y = 30
+		##choice_label.custom_minimum_size.y = 36
+
 		choice_container.add_child(choice_label)
 
+	update_choice_display()
 func update_choice_display():
 	var choice_labels = choice_container.get_children()
 
@@ -113,6 +112,7 @@ func select_choice():
 
 func hide_choices():
 	choices_active = false
+	choice_prompt_label.hide()
 	choice_container.hide()
 	continue_label.show()
 

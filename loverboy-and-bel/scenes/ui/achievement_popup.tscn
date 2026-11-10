@@ -2,11 +2,26 @@
 
 [ext_resource type="Script" uid="uid://bwmfmk8bbw3eo" path="res://scripts/achievement_popup.gd" id="1_4valq"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7m8al"]
+bg_color = Color(0.14117648, 0.09019608, 0.05882353, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.8392157, 0.6039216, 0.20784314, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 8
+
 [node name="AchievementPopup" type="Control" unique_id=1085326658]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 2.0
+offset_right = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4valq")
@@ -17,6 +32,7 @@ offset_left = 277.0
 offset_top = 93.0
 offset_right = 839.0
 offset_bottom = 298.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7m8al")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1463533292]
 layout_mode = 2
@@ -26,9 +42,18 @@ layout_mode = 2
 
 [node name="AchievementLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=53549708]
 layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Achievement"
+horizontal_alignment = 1
 
 [node name="TitleLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=745722690]
 layout_mode = 2
+theme_override_font_sizes/font_size = 33
+text = "Title"
+horizontal_alignment = 1
 
 [node name="DescriptionLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2032159292]
 layout_mode = 2
+theme_override_font_sizes/font_size = 29
+text = "Bla Bla Bla"
+horizontal_alignment = 1
