@@ -14,8 +14,8 @@ script = ExtResource("1_aju64")
 [node name="Environment" type="Node2D" parent="." unique_id=65208877]
 
 [node name="Restaurant" type="Sprite2D" parent="Environment" unique_id=14745565]
-position = Vector2(580, 327.25)
-scale = Vector2(0.74218756, 0.63623047)
+position = Vector2(574.50006, 327.25)
+scale = Vector2(0.74934906, 0.63623047)
 texture = ExtResource("2_2ejkv")
 
 [node name="Table" type="StaticBody2D" parent="Environment" unique_id=1589556329]
@@ -49,9 +49,9 @@ dialogue_type = "first_date"
 [node name="Loverboy" parent="." unique_id=985468098 instance=ExtResource("2_fpm3c")]
 position = Vector2(210, 606)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=322692060]
-position = Vector2(470.99997, 570.00006)
-scale = Vector2(0.22819012, 0.22033685)
+[node name="GreenWall" type="Sprite2D" parent="." unique_id=322692060]
+position = Vector2(467.62497, 570.0938)
+scale = Vector2(0.23258464, 0.22051993)
 texture = ExtResource("7_7m8al")
 
 [node name="DialogueBox" parent="." unique_id=497366372 instance=ExtResource("3_fpm3c")]
@@ -76,3 +76,27 @@ position = Vector2(495, 349)
 
 [node name="BelSeatPosition" type="Marker2D" parent="." unique_id=1285744900]
 position = Vector2(693, 354)
+
+[node name="GameBoundaries" type="StaticBody2D" parent="." unique_id=1733506999]
+
+[node name="TopBoundary" type="CollisionPolygon2D" parent="GameBoundaries" unique_id=93827667]
+polygon = PackedVector2Array(1160, -1, 1160, 12, -11, 21, -9, -13)
+
+[node name="RightBoundary" type="CollisionPolygon2D" parent="GameBoundaries" unique_id=524490201]
+polygon = PackedVector2Array(1134, -8, 1141, 661, 1171, 658, 1171, -13)
+
+[node name="LeftBoundary" type="CollisionPolygon2D" parent="GameBoundaries" unique_id=1644258423]
+polygon = PackedVector2Array(9, 658, -14, 658, -14, -4, 34, -8)
+
+[node name="BottomBoundary" type="CollisionPolygon2D" parent="GameBoundaries" unique_id=586392905]
+polygon = PackedVector2Array(322, 633, 322, 658, 1173, 663, 1173, 633)
+
+[node name="WelcomeBoundary" type="CollisionPolygon2D" parent="GameBoundaries" unique_id=855650475]
+polygon = PackedVector2Array(11, 617, 14, 661, 324, 661, 324, 624)
+
+[node name="WelcomeExit" type="Area2D" parent="." unique_id=1031327092]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WelcomeExit" unique_id=1499055754]
+polygon = PackedVector2Array(18, 651, 13, 812, 337, 817, 329, 646)
+
+[connection signal="body_entered" from="WelcomeExit" to="." method="_on_welcome_exit_body_entered"]

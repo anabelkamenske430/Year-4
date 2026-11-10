@@ -14,6 +14,6 @@ func show_achievement(title: String, description: String):
 
 	show()
 
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(5.0).timeout
 
 	hide()

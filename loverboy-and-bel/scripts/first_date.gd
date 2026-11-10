@@ -68,5 +68,12 @@ func finish_first_date():
 	print("FIRST DATE COMPLETE")
 	$AchievementPopup.show_achievement(
 		"STILL HERE",
-		"Survived a four-hour first date."
+		"Leave the pepperspray at home next time?"
 	)
+
+	$GameBoundaries/WelcomeBoundary.set_deferred("disabled", true)
+
+
+func _on_welcome_exit_body_entered(body):
+	if body == $Loverboy:
+		print("LOVERBOY EXITED THE RESTAURANT")
