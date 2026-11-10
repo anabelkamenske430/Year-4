@@ -1,8 +1,14 @@
 [gd_scene format=3 uid="uid://didhf8tpdcrdq"]
 
+[ext_resource type="Texture2D" uid="uid://bjas8pcsbml7w" path="res://assets/environments/bowling_alley_background.png" id="1_4xon6"]
 [ext_resource type="PackedScene" uid="uid://bfrjo0u7e4fq" path="res://scenes/characters/bel.tscn" id="1_kimcj"]
 
 [node name="Bowling" type="Node2D" unique_id=1913622243]
 
+[node name="BowlingAlley" type="Sprite2D" parent="." unique_id=2139583998]
+position = Vector2(580, 326.25)
+scale = Vector2(0.76171875, 0.64599615)
+texture = ExtResource("1_4xon6")
+
 [node name="Bel" parent="." unique_id=1496050138 instance=ExtResource("1_kimcj")]
-position = Vector2(428, 290)
+position = Vector2(243, 236)
