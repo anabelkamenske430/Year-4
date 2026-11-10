@@ -2,30 +2,20 @@
 
 [ext_resource type="Script" uid="uid://5rs6qooohxir" path="res://scripts/first_date.gd" id="1_aju64"]
 [ext_resource type="PackedScene" uid="uid://bfrjo0u7e4fq" path="res://scenes/characters/bel.tscn" id="1_xx8ys"]
-[ext_resource type="Texture2D" uid="uid://4l21kypo7v4d" path="res://assets/environments/first_date_background.png" id="2_2ejkv"]
+[ext_resource type="Texture2D" uid="uid://nyxgwxnqc1yt" path="res://assets/environments/cheddars_background.png" id="2_2ejkv"]
 [ext_resource type="PackedScene" uid="uid://cftclvctilfi1" path="res://scenes/characters/loverboy.tscn" id="2_fpm3c"]
 [ext_resource type="PackedScene" uid="uid://cqm1pe1guswge" path="res://scenes/ui/dialogue_box.tscn" id="3_fpm3c"]
 [ext_resource type="PackedScene" uid="uid://bn0xvdy32aunp" path="res://scenes/ui/achievement_popup.tscn" id="5_si2br"]
+[ext_resource type="Texture2D" uid="uid://7njib6bqv5dv" path="res://assets/environments/green_wall.png" id="7_7m8al"]
 
 [node name="FirstDate" type="Node2D" unique_id=1761486837]
 script = ExtResource("1_aju64")
 
 [node name="Environment" type="Node2D" parent="." unique_id=65208877]
 
-[node name="Floor" type="Polygon2D" parent="Environment" unique_id=1087986955]
-visible = false
-position = Vector2(2, -5)
-color = Color(0.36078432, 0.2901961, 0.23921569, 1)
-polygon = PackedVector2Array(-6, 2, -15, 664, 1164, 669, 1173, -16)
-
-[node name="BackWall" type="Polygon2D" parent="Environment" unique_id=691400250]
-visible = false
-color = Color(0.2, 0.1764706, 0.16470589, 1)
-polygon = PackedVector2Array(2, 74, 1154, 77, 1153, -11, 3, -8)
-
-[node name="Sprite2D" type="Sprite2D" parent="Environment" unique_id=14745565]
-position = Vector2(574, 310)
-scale = Vector2(0.74088544, 0.67089844)
+[node name="Restaurant" type="Sprite2D" parent="Environment" unique_id=14745565]
+position = Vector2(580, 327.25)
+scale = Vector2(0.74218756, 0.63623047)
 texture = ExtResource("2_2ejkv")
 
 [node name="Table" type="StaticBody2D" parent="Environment" unique_id=1589556329]
@@ -36,22 +26,34 @@ visible = false
 color = Color(0.4392157, 0.2901961, 0.19607843, 1)
 polygon = PackedVector2Array(475, 296, 476, 414, 647, 417, 650, 295)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Environment/Table" unique_id=1260827017]
-position = Vector2(10, -41)
-polygon = PackedVector2Array(526, 298, 524, 414, 601, 418, 609, 306)
+[node name="MainTable" type="CollisionPolygon2D" parent="Environment/Table" unique_id=1260827017]
+position = Vector2(-6, -36)
+polygon = PackedVector2Array(535, 295, 535, 418, 671, 416, 671, 301)
+
+[node name="FrontLeftTable" type="CollisionPolygon2D" parent="Environment/Table" unique_id=708061811]
+polygon = PackedVector2Array(256, 381, 262, 466, 358, 468, 358, 382)
+
+[node name="FrontRightTable" type="CollisionPolygon2D" parent="Environment/Table" unique_id=718759886]
+polygon = PackedVector2Array(812, 382, 815, 455, 918, 455, 913, 382)
+
+[node name="BackLeftTable" type="CollisionPolygon2D" parent="Environment/Table" unique_id=1516069622]
+polygon = PackedVector2Array(260, 187, 260, 257, 360, 258, 358, 185)
+
+[node name="BackRightTable" type="CollisionPolygon2D" parent="Environment/Table" unique_id=2076005195]
+polygon = PackedVector2Array(815, 185, 815, 255, 910, 256, 909, 187)
 
 [node name="Bel" parent="." unique_id=1496050138 instance=ExtResource("1_xx8ys")]
-position = Vector2(891, 579)
+position = Vector2(825, 604)
 dialogue_type = "first_date"
 
 [node name="Loverboy" parent="." unique_id=985468098 instance=ExtResource("2_fpm3c")]
-position = Vector2(229, 560)
+position = Vector2(210, 606)
 
 [node name="DialogueBox" parent="." unique_id=497366372 instance=ExtResource("3_fpm3c")]
-offset_left = -1.0
-offset_top = 534.0
-offset_right = -1.0
-offset_bottom = 534.0
+offset_left = 6.0
+offset_top = 525.0
+offset_right = 6.0
+offset_bottom = 525.0
 
 [node name="AchievementPopup" parent="." unique_id=1085326658 instance=ExtResource("5_si2br")]
 anchors_preset = 0
@@ -68,4 +70,9 @@ grow_vertical = 1
 position = Vector2(495, 349)
 
 [node name="BelSeatPosition" type="Marker2D" parent="." unique_id=1285744900]
-position = Vector2(649, 338)
+position = Vector2(693, 354)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=322692060]
+position = Vector2(470.99997, 570.00006)
+scale = Vector2(0.22819012, 0.22033685)
+texture = ExtResource("7_7m8al")
