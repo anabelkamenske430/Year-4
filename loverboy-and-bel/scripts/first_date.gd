@@ -2,6 +2,7 @@ extends Node2D
 
 const FirstDateDialogue = preload("res://dialogue/first_date_dialogue.gd")
 
+var exit_unlocked: bool = false
 var story_step = 0
 var target_position = null
 
@@ -71,9 +72,19 @@ func finish_first_date():
 		"Leave the pepperspray at home next time?"
 	)
 
+	exit_unlocked = true
 	$GameBoundaries/WelcomeBoundary.set_deferred("disabled", true)
 
-
 func _on_welcome_exit_body_entered(body):
-	if body == $Loverboy:
-		print("LOVERBOY EXITED THE RESTAURANT")
+	if body != $Loverboy:
+		return
+
+	if not exit_unlocked:
+		print("EXIT LOCKED")
+		return
+
+	print("LOVERBOY EXITED THE RESTAURANT")
+
+	get_tree().change_scene_to_file(
+		"res://scenes/levels/bowling.tscn"
+	)

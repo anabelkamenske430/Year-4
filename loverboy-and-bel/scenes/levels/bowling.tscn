@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://didhf8tpdcrdq"]
+
+[ext_resource type="PackedScene" uid="uid://bfrjo0u7e4fq" path="res://scenes/characters/bel.tscn" id="1_kimcj"]
+
+[node name="Bowling" type="Node2D" unique_id=1913622243]
+
+[node name="Bel" parent="." unique_id=1496050138 instance=ExtResource("1_kimcj")]
+position = Vector2(428, 290)

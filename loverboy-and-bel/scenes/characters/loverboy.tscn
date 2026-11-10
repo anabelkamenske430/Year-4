@@ -76,4 +76,4 @@ position = Vector2(-3, 2)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InteractionArea" unique_id=547021739]
 position = Vector2(-499, -132.99998)
 scale = Vector2(4.5284095, 2.932692)
-polygon = PackedVector2Array(90.400246, -35.749184, 131.6951, -34.044266, 132.13675, 64.15903, 91.50437, 62.454105)
+polygon = PackedVector2Array(90.400246, -35.749184, 131.6951, -34.044266, 131.17188, 49.44262, 92.08531, 51.829506)

@@ -47,7 +47,7 @@ position = Vector2(825, 604)
 dialogue_type = "first_date"
 
 [node name="Loverboy" parent="." unique_id=985468098 instance=ExtResource("2_fpm3c")]
-position = Vector2(210, 606)
+position = Vector2(166, 595)
 
 [node name="GreenWall" type="Sprite2D" parent="." unique_id=322692060]
 position = Vector2(467.62497, 570.0938)
@@ -97,6 +97,6 @@ polygon = PackedVector2Array(11, 617, 14, 661, 324, 661, 324, 624)
 [node name="WelcomeExit" type="Area2D" parent="." unique_id=1031327092]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WelcomeExit" unique_id=1499055754]
-polygon = PackedVector2Array(18, 651, 13, 812, 337, 817, 329, 646)
+polygon = PackedVector2Array(18, 651, 13, 812, 337, 817, 323, 651)
 
 [connection signal="body_entered" from="WelcomeExit" to="." method="_on_welcome_exit_body_entered"]
