@@ -2,8 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://bjas8pcsbml7w" path="res://assets/environments/bowling_alley_background.png" id="1_4xon6"]
 [ext_resource type="PackedScene" uid="uid://bfrjo0u7e4fq" path="res://scenes/characters/bel.tscn" id="1_kimcj"]
+[ext_resource type="PackedScene" uid="uid://cftclvctilfi1" path="res://scenes/characters/loverboy.tscn" id="3_suiyq"]
 
 [node name="Bowling" type="Node2D" unique_id=1913622243]
+
+[node name="Environment" type="StaticBody2D" parent="." unique_id=802633727]
+
+[node name="MainTable" type="CollisionPolygon2D" parent="Environment" unique_id=703760889]
+polygon = PackedVector2Array(378, 281, 376, 408, 442, 410, 444, 356, 598, 360, 594, 281)
+
+[node name="BallRack" type="CollisionPolygon2D" parent="Environment" unique_id=2020602874]
+polygon = PackedVector2Array(222, 491, 222, 590, 650, 586, 656, 499)
 
 [node name="BowlingAlley" type="Sprite2D" parent="." unique_id=2139583998]
 position = Vector2(580, 326.25)
@@ -12,3 +21,23 @@ texture = ExtResource("1_4xon6")
 
 [node name="Bel" parent="." unique_id=1496050138 instance=ExtResource("1_kimcj")]
 position = Vector2(243, 236)
+
+[node name="Loverboy" parent="." unique_id=985468098 instance=ExtResource("3_suiyq")]
+position = Vector2(112, 174)
+
+[node name="GameBoundaries" type="StaticBody2D" parent="." unique_id=431081899]
+
+[node name="LeftBoundary" type="CollisionPolygon2D" parent="GameBoundaries" unique_id=816211661]
+polygon = PackedVector2Array(11, 651, 13, 518, 112, 511, 110, 242, 6, 209, 4, -20, -39, -13, -33, 651)
+
+[node name="RightBoundary" type="CollisionPolygon2D" parent="GameBoundaries" unique_id=1884618309]
+polygon = PackedVector2Array(1150, -30, 1150, 684, 1177, 684, 1171, -28)
+
+[node name="BottomBoundary" type="CollisionPolygon2D" parent="GameBoundaries" unique_id=1289090707]
+polygon = PackedVector2Array(-41, 636, 1202, 642, 1195, 665, -48, 665)
+
+[node name="TopBoundary" type="CollisionPolygon2D" parent="GameBoundaries" unique_id=1325708452]
+polygon = PackedVector2Array(179, -22, 177, 16, 1189, 11, 1187, -22)
+
+[node name="WelcomeBoundary" type="CollisionPolygon2D" parent="GameBoundaries" unique_id=587389434]
+polygon = PackedVector2Array(170, -9, 183, 18, -4, 20, -4, -13)
