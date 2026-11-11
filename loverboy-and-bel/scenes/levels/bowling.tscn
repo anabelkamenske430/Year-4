@@ -1,18 +1,13 @@
 [gd_scene format=3 uid="uid://didhf8tpdcrdq"]
 
 [ext_resource type="Texture2D" uid="uid://bjas8pcsbml7w" path="res://assets/environments/bowling_alley_background.png" id="1_4xon6"]
+[ext_resource type="Script" uid="uid://8slyrfkxet3e" path="res://scenes/levels/bowling.gd" id="1_7wjn3"]
 [ext_resource type="PackedScene" uid="uid://bfrjo0u7e4fq" path="res://scenes/characters/bel.tscn" id="1_kimcj"]
 [ext_resource type="PackedScene" uid="uid://cftclvctilfi1" path="res://scenes/characters/loverboy.tscn" id="3_suiyq"]
+[ext_resource type="PackedScene" uid="uid://cqm1pe1guswge" path="res://scenes/ui/dialogue_box.tscn" id="5_2p8bq"]
 
 [node name="Bowling" type="Node2D" unique_id=1913622243]
-
-[node name="Environment" type="StaticBody2D" parent="." unique_id=802633727]
-
-[node name="MainTable" type="CollisionPolygon2D" parent="Environment" unique_id=703760889]
-polygon = PackedVector2Array(378, 281, 376, 408, 442, 410, 444, 356, 598, 360, 594, 281)
-
-[node name="BallRack" type="CollisionPolygon2D" parent="Environment" unique_id=2020602874]
-polygon = PackedVector2Array(222, 491, 222, 590, 650, 586, 656, 499)
+script = ExtResource("1_7wjn3")
 
 [node name="BowlingAlley" type="Sprite2D" parent="." unique_id=2139583998]
 position = Vector2(580, 326.25)
@@ -23,7 +18,7 @@ texture = ExtResource("1_4xon6")
 position = Vector2(243, 236)
 
 [node name="Loverboy" parent="." unique_id=985468098 instance=ExtResource("3_suiyq")]
-position = Vector2(112, 174)
+position = Vector2(148, 234)
 
 [node name="GameBoundaries" type="StaticBody2D" parent="." unique_id=431081899]
 
@@ -41,3 +36,20 @@ polygon = PackedVector2Array(179, -22, 177, 16, 1189, 11, 1187, -22)
 
 [node name="WelcomeBoundary" type="CollisionPolygon2D" parent="GameBoundaries" unique_id=587389434]
 polygon = PackedVector2Array(170, -9, 183, 18, -4, 20, -4, -13)
+
+[node name="Environment" type="StaticBody2D" parent="." unique_id=802633727]
+
+[node name="MainTable" type="CollisionPolygon2D" parent="Environment" unique_id=703760889]
+polygon = PackedVector2Array(378, 281, 376, 408, 442, 410, 444, 356, 598, 360, 594, 281)
+
+[node name="BallRack" type="CollisionPolygon2D" parent="Environment" unique_id=2020602874]
+polygon = PackedVector2Array(226, 502, 232, 569, 655, 566, 656, 499)
+
+[node name="FoulLine" type="CollisionPolygon2D" parent="Environment" unique_id=1456023103]
+polygon = PackedVector2Array(727, 424, 727, 436, 1114, 441, 1109, 425)
+
+[node name="DialogueBox" parent="." unique_id=497366372 instance=ExtResource("5_2p8bq")]
+offset_left = 263.0
+offset_top = 513.0
+offset_right = 263.0
+offset_bottom = 513.0
