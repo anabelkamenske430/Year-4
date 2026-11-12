@@ -17,3 +17,14 @@ func move_bel_to_lane():
 		$BelWaypoint2.global_position,
 		$BelSeat.global_position
 	])
+
+func start_bowling():
+
+	print("BOWLING STARTED!")
+
+	DialogueManager.start_dialogue([
+		{
+			"speaker": "Bel",
+			"text": "Let's see what you've got."
+		}
+	])

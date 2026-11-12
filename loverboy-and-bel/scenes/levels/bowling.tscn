@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cftclvctilfi1" path="res://scenes/characters/loverboy.tscn" id="3_suiyq"]
 [ext_resource type="PackedScene" uid="uid://cqm1pe1guswge" path="res://scenes/ui/dialogue_box.tscn" id="5_2p8bq"]
 [ext_resource type="Script" uid="uid://b3rdip7hqq553" path="res://scripts/bowling_ball_pickup.gd" id="6_ujw30"]
+[ext_resource type="Script" uid="uid://c23lqhqpskcvw" path="res://scripts/lane_trigger.gd" id="7_y0td8"]
 
 [node name="Bowling" type="Node2D" unique_id=1913622243]
 script = ExtResource("1_7wjn3")
@@ -66,3 +67,9 @@ position = Vector2(301, 435)
 
 [node name="BelWaypoint2" type="Marker2D" parent="." unique_id=1727009998]
 position = Vector2(699, 483)
+
+[node name="LaneTrigger" type="Area2D" parent="." unique_id=1451602226]
+script = ExtResource("7_y0td8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LaneTrigger" unique_id=1493713055]
+polygon = PackedVector2Array(803, 436, 803, 500, 1044, 503, 1038, 436)
