@@ -11,6 +11,8 @@ var target_position: Vector2
 var is_moving: bool = false
 var last_direction: Vector2 = Vector2.DOWN
 
+var movement_path = []
+var current_waypoint = 0
 
 func _ready():
 	target_position = global_position
@@ -53,8 +55,14 @@ func move_toward_target(delta):
 
 	if global_position.distance_to(target_position) < 2.0:
 		global_position = target_position
-		is_moving = false
-		animated_sprite.play("idle")
+		current_waypoint += 1
+		if current_waypoint < movement_path.size():
+			move_to_position(
+				movement_path[current_waypoint]
+			)
+		else:
+			is_moving = false
+			animated_sprite.play("idle")
 		return
 
 	last_direction = direction
@@ -65,6 +73,14 @@ func move_toward_target(delta):
 		move_speed * delta
 	)
 
+func follow_path(path):
+
+	movement_path = path
+	current_waypoint = 0
+
+	move_to_position(
+		movement_path[current_waypoint]
+	)
 
 func update_walk_animation(direction: Vector2):
 	if abs(direction.x) > abs(direction.y):
