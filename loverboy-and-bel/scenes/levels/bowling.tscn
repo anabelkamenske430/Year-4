@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bfrjo0u7e4fq" path="res://scenes/characters/bel.tscn" id="1_kimcj"]
 [ext_resource type="PackedScene" uid="uid://cftclvctilfi1" path="res://scenes/characters/loverboy.tscn" id="3_suiyq"]
 [ext_resource type="PackedScene" uid="uid://cqm1pe1guswge" path="res://scenes/ui/dialogue_box.tscn" id="5_2p8bq"]
+[ext_resource type="Script" uid="uid://b3rdip7hqq553" path="res://scripts/bowling_ball_pickup.gd" id="6_ujw30"]
 
 [node name="Bowling" type="Node2D" unique_id=1913622243]
 script = ExtResource("1_7wjn3")
@@ -42,9 +43,6 @@ polygon = PackedVector2Array(170, -9, 183, 18, -4, 20, -4, -13)
 [node name="MainTable" type="CollisionPolygon2D" parent="Environment" unique_id=703760889]
 polygon = PackedVector2Array(378, 281, 376, 408, 442, 410, 444, 356, 598, 360, 594, 281)
 
-[node name="BallRack" type="CollisionPolygon2D" parent="Environment" unique_id=2020602874]
-polygon = PackedVector2Array(226, 502, 232, 569, 655, 566, 656, 499)
-
 [node name="FoulLine" type="CollisionPolygon2D" parent="Environment" unique_id=1456023103]
 polygon = PackedVector2Array(727, 424, 727, 436, 1114, 441, 1109, 425)
 
@@ -53,3 +51,9 @@ offset_left = 263.0
 offset_top = 513.0
 offset_right = 263.0
 offset_bottom = 513.0
+
+[node name="BowlingBallPickup" type="Area2D" parent="." unique_id=86482684]
+script = ExtResource("6_ujw30")
+
+[node name="BallRack" type="CollisionPolygon2D" parent="BowlingBallPickup" unique_id=2020602874]
+polygon = PackedVector2Array(226, 502, 232, 569, 655, 566, 656, 499)
