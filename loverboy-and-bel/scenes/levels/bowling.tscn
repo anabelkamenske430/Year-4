@@ -57,3 +57,12 @@ script = ExtResource("6_ujw30")
 
 [node name="BallRack" type="CollisionPolygon2D" parent="BowlingBallPickup" unique_id=2020602874]
 polygon = PackedVector2Array(226, 502, 232, 569, 655, 566, 656, 499)
+
+[node name="BelSeat" type="Marker2D" parent="." unique_id=114384167]
+position = Vector2(1046, 610)
+
+[node name="BelWaypoint1" type="Marker2D" parent="." unique_id=1886497078]
+position = Vector2(301, 435)
+
+[node name="BelWaypoint2" type="Marker2D" parent="." unique_id=1727009998]
+position = Vector2(699, 483)

@@ -34,12 +34,13 @@ func show_current_line():
 	dialogue_label.text = line["text"]
 
 	if line.has("event"):
-
 		match line["event"]:
-
 			"sit_at_table":
 				print("sit at table thrown")
 				get_tree().current_scene.move_to_table()
+			"walk_to_bowling_seat":
+				print("Bel to bowling seat thrown")
+				get_tree().current_scene.move_bel_to_lane()
 
 	if line.has("choices"):
 		show_choices(line["choices"])
