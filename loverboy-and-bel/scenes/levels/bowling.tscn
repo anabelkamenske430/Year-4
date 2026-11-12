@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bfrjo0u7e4fq" path="res://scenes/characters/bel.tscn" id="1_kimcj"]
 [ext_resource type="PackedScene" uid="uid://cftclvctilfi1" path="res://scenes/characters/loverboy.tscn" id="3_suiyq"]
 [ext_resource type="PackedScene" uid="uid://cqm1pe1guswge" path="res://scenes/ui/dialogue_box.tscn" id="5_2p8bq"]
+[ext_resource type="Texture2D" uid="uid://brccr2abj8ovt" path="res://assets/environments/bowling_ball.png" id="5_ujw30"]
 
 [node name="Bowling" type="Node2D" unique_id=1913622243]
 script = ExtResource("1_7wjn3")
@@ -47,6 +48,11 @@ polygon = PackedVector2Array(226, 502, 232, 569, 655, 566, 656, 499)
 
 [node name="FoulLine" type="CollisionPolygon2D" parent="Environment" unique_id=1456023103]
 polygon = PackedVector2Array(727, 424, 727, 436, 1114, 441, 1109, 425)
+
+[node name="BowlingBall" type="Sprite2D" parent="Environment" unique_id=272958941]
+position = Vector2(317, 571.00006)
+scale = Vector2(0.24393941, 0.22428618)
+texture = ExtResource("5_ujw30")
 
 [node name="DialogueBox" parent="." unique_id=497366372 instance=ExtResource("5_2p8bq")]
 offset_left = 263.0
