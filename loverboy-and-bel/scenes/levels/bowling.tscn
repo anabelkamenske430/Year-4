@@ -5,9 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://bfrjo0u7e4fq" path="res://scenes/characters/bel.tscn" id="1_kimcj"]
 [ext_resource type="PackedScene" uid="uid://cftclvctilfi1" path="res://scenes/characters/loverboy.tscn" id="3_suiyq"]
 [ext_resource type="PackedScene" uid="uid://cqm1pe1guswge" path="res://scenes/ui/dialogue_box.tscn" id="5_2p8bq"]
+[ext_resource type="Texture2D" uid="uid://brccr2abj8ovt" path="res://assets/environments/bowling_ball.png" id="5_ujw30"]
 [ext_resource type="Script" uid="uid://b3rdip7hqq553" path="res://scripts/bowling_ball_pickup.gd" id="6_ujw30"]
 [ext_resource type="Script" uid="uid://c23lqhqpskcvw" path="res://scripts/lane_trigger.gd" id="7_y0td8"]
-[ext_resource type="Texture2D" uid="uid://brccr2abj8ovt" path="res://assets/environments/bowling_ball.png" id="5_ujw30"]
+[ext_resource type="PackedScene" uid="uid://dbf0sknw4uyop" path="res://scenes/levels/bowling_minigame.tscn" id="9_ff613"]
 
 [node name="Bowling" type="Node2D" unique_id=1913622243]
 script = ExtResource("1_7wjn3")
@@ -79,3 +80,9 @@ script = ExtResource("7_y0td8")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LaneTrigger" unique_id=1493713055]
 polygon = PackedVector2Array(803, 436, 803, 500, 1044, 503, 1038, 436)
+
+[node name="BowlingMinigame" parent="." unique_id=2132621044 instance=ExtResource("9_ff613")]
+offset_left = 785.0
+offset_top = 214.0
+offset_right = 1075.0
+offset_bottom = 320.0

@@ -14,5 +14,8 @@ func interact():
 		])
 
 		return
+		
+	if bowling_scene.bowling_started:
+		return
 
 	bowling_scene.start_bowling()

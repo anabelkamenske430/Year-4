@@ -33,15 +33,6 @@ func show_current_line():
 	speaker_label.text = line["speaker"]
 	dialogue_label.text = line["text"]
 
-	if line.has("event"):
-		match line["event"]:
-			"sit_at_table":
-				print("sit at table thrown")
-				get_tree().current_scene.move_to_table()
-			"walk_to_bowling_seat":
-				print("Bel to bowling seat thrown")
-				get_tree().current_scene.move_bel_to_lane()
-
 	if line.has("choices"):
 		show_choices(line["choices"])
 	else:
@@ -69,6 +60,7 @@ func show_choices(choices):
 		choice_container.add_child(choice_label)
 
 	update_choice_display()
+	
 func update_choice_display():
 	var choice_labels = choice_container.get_children()
 
@@ -126,7 +118,19 @@ func advance_dialogue():
 	if current_index >= dialogue_lines.size():
 		hide_dialogue()
 		return
+	var line = dialogue_lines[current_index]
 
+	if line.has("event"):
+		match line["event"]:
+			"sit_at_table":
+				get_tree().current_scene.move_to_table()
+			"walk_to_bowling_seat":
+				get_tree().current_scene.move_bel_to_lane()
+			"start_bowling_game":
+				get_tree().current_scene.start_bowling_game()
+		hide_dialogue()
+		return
+		
 	show_current_line()
 
 
