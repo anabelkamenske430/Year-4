@@ -26,6 +26,8 @@ func _process(delta):
 		direction = 1
 
 func _unhandled_input(event):
+	if not visible:
+		return
 
 	if event.is_action_pressed("interact") and game_active:
 		game_active = false
@@ -36,6 +38,9 @@ func _unhandled_input(event):
 
 		await get_tree().create_timer(1.5).timeout
 		print("Ready for next step")
+		
+		get_tree().current_scene.receive_bowling_result(result)
+		hide()
 		
 func start_game():
 

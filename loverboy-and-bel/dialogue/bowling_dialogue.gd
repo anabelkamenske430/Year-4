@@ -20,7 +20,9 @@ static func get_intro() -> Array:
 		},
 		{
 			"speaker": "Bel",
-			"text": "C'mon let's grab a lane!!",
+			"text": "C'mon let's grab a lane!!"
+		},
+		{
 			"event": "walk_to_bowling_seat"
 		}
 	]

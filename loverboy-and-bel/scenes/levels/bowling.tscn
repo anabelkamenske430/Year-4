@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://b3rdip7hqq553" path="res://scripts/bowling_ball_pickup.gd" id="6_ujw30"]
 [ext_resource type="Script" uid="uid://c23lqhqpskcvw" path="res://scripts/lane_trigger.gd" id="7_y0td8"]
 [ext_resource type="PackedScene" uid="uid://dbf0sknw4uyop" path="res://scenes/levels/bowling_minigame.tscn" id="9_ff613"]
+[ext_resource type="PackedScene" uid="uid://bn0xvdy32aunp" path="res://scenes/ui/achievement_popup.tscn" id="10_uw325"]
 
 [node name="Bowling" type="Node2D" unique_id=1913622243]
 script = ExtResource("1_7wjn3")
@@ -17,6 +18,25 @@ script = ExtResource("1_7wjn3")
 position = Vector2(580, 326.25)
 scale = Vector2(0.76171875, 0.64599615)
 texture = ExtResource("1_4xon6")
+
+[node name="Environment" type="StaticBody2D" parent="." unique_id=802633727]
+
+[node name="MainTable" type="CollisionPolygon2D" parent="Environment" unique_id=703760889]
+polygon = PackedVector2Array(378, 281, 376, 408, 442, 410, 444, 356, 598, 360, 594, 281)
+
+[node name="FoulLine" type="CollisionPolygon2D" parent="Environment" unique_id=1456023103]
+polygon = PackedVector2Array(727, 424, 727, 436, 1114, 441, 1109, 425)
+
+[node name="BowlingBall" type="Sprite2D" parent="Environment" unique_id=272958941]
+position = Vector2(317, 571.00006)
+scale = Vector2(0.24393941, 0.22428618)
+texture = ExtResource("5_ujw30")
+
+[node name="BowlingBallPickup" type="Area2D" parent="." unique_id=86482684]
+script = ExtResource("6_ujw30")
+
+[node name="BallRack" type="CollisionPolygon2D" parent="BowlingBallPickup" unique_id=2020602874]
+polygon = PackedVector2Array(226, 502, 232, 569, 655, 566, 656, 499)
 
 [node name="Bel" parent="." unique_id=1496050138 instance=ExtResource("1_kimcj")]
 position = Vector2(243, 236)
@@ -41,30 +61,11 @@ polygon = PackedVector2Array(179, -22, 177, 16, 1189, 11, 1187, -22)
 [node name="WelcomeBoundary" type="CollisionPolygon2D" parent="GameBoundaries" unique_id=587389434]
 polygon = PackedVector2Array(170, -9, 183, 18, -4, 20, -4, -13)
 
-[node name="Environment" type="StaticBody2D" parent="." unique_id=802633727]
-
-[node name="MainTable" type="CollisionPolygon2D" parent="Environment" unique_id=703760889]
-polygon = PackedVector2Array(378, 281, 376, 408, 442, 410, 444, 356, 598, 360, 594, 281)
-
-[node name="FoulLine" type="CollisionPolygon2D" parent="Environment" unique_id=1456023103]
-polygon = PackedVector2Array(727, 424, 727, 436, 1114, 441, 1109, 425)
-
-[node name="BowlingBall" type="Sprite2D" parent="Environment" unique_id=272958941]
-position = Vector2(317, 571.00006)
-scale = Vector2(0.24393941, 0.22428618)
-texture = ExtResource("5_ujw30")
-
 [node name="DialogueBox" parent="." unique_id=497366372 instance=ExtResource("5_2p8bq")]
 offset_left = 263.0
 offset_top = 513.0
 offset_right = 263.0
 offset_bottom = 513.0
-
-[node name="BowlingBallPickup" type="Area2D" parent="." unique_id=86482684]
-script = ExtResource("6_ujw30")
-
-[node name="BallRack" type="CollisionPolygon2D" parent="BowlingBallPickup" unique_id=2020602874]
-polygon = PackedVector2Array(226, 502, 232, 569, 655, 566, 656, 499)
 
 [node name="BelSeat" type="Marker2D" parent="." unique_id=114384167]
 position = Vector2(1046, 610)
@@ -86,3 +87,16 @@ offset_left = 785.0
 offset_top = 214.0
 offset_right = 1075.0
 offset_bottom = 320.0
+
+[node name="AchievementPopup" parent="." unique_id=1085326658 instance=ExtResource("10_uw325")]
+offset_left = -21.0
+offset_top = -18.0
+offset_right = -21.0
+offset_bottom = -18.0
+
+[node name="BowlingExit" type="Area2D" parent="." unique_id=990417498]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BowlingExit" unique_id=467859157]
+polygon = PackedVector2Array(6, -87, 2, 5, 187, -4, 189, -95)
+
+[connection signal="body_entered" from="BowlingExit" to="." method="_on_bowling_exit_body_entered"]

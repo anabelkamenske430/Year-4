@@ -128,6 +128,10 @@ func advance_dialogue():
 				get_tree().current_scene.move_bel_to_lane()
 			"start_bowling_game":
 				get_tree().current_scene.start_bowling_game()
+			"next_bowling_throw":
+				get_tree().current_scene.next_bowling_throw()
+			"finish_bowling":
+				get_tree().current_scene.finish_bowling()
 		hide_dialogue()
 		return
 		
