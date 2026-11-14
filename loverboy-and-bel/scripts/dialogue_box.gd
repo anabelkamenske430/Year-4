@@ -132,6 +132,14 @@ func advance_dialogue():
 				get_tree().current_scene.next_bowling_throw()
 			"finish_bowling":
 				get_tree().current_scene.finish_bowling()
+			"walk_to_range_seat":
+				get_tree().current_scene.move_bel_to_seat()
+			"start_range_game":
+				get_tree().current_scene.start_range_game()
+			"next_shot":
+				get_tree().current_scene.next_shot()
+			"finish_shooting":
+				get_tree().current_scene.finish_shooting()
 		hide_dialogue()
 		return
 		

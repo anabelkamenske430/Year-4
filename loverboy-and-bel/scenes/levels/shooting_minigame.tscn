@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cp1mcx1esoacn"]
+
+[ext_resource type="Script" uid="uid://cwxfgeah0q357" path="res://scripts/shooting_minigame.gd" id="1_en6ie"]
+
+[node name="ShootingMinigame" type="Control" unique_id=2132621044]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 290.0
+offset_bottom = 106.0
+script = ExtResource("1_en6ie")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=769457554]
+layout_mode = 0
+offset_right = 288.0
+offset_bottom = 104.0
+color = Color(0.570368, 0.48468113, 0.3027589, 1)
+
+[node name="AccuracyBar" type="ProgressBar" parent="." unique_id=1359625311]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 54.0
+offset_right = 264.0
+offset_bottom = 85.0
+show_percentage = false
+
+[node name="Marker" type="Label" parent="." unique_id=1934798212]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 71.0
+offset_right = 152.0
+offset_bottom = 111.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 29
+text = "^"
+
+[node name="ResultLabel" type="Label" parent="." unique_id=1020131359]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 4.0
+offset_right = 287.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0.029506557, 0.029506557, 0.029506557, 1)
+theme_override_font_sizes/font_size = 31
+text = "Waiting..."
+horizontal_alignment = 1

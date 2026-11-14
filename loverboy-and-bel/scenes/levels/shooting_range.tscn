@@ -1,8 +1,77 @@
 [gd_scene format=3 uid="uid://02lwlpqsaot4"]
 
+[ext_resource type="Texture2D" uid="uid://dyvr2u1iwdayi" path="res://assets/environments/shooting_range_background.png" id="1_ldnpn"]
 [ext_resource type="PackedScene" uid="uid://bfrjo0u7e4fq" path="res://scenes/characters/bel.tscn" id="1_mvt21"]
+[ext_resource type="Script" uid="uid://cgkpimmrnxymg" path="res://scripts/shooting_range.gd" id="1_t0t43"]
+[ext_resource type="Texture2D" uid="uid://45qx3rx75jnc" path="res://assets/environments/pixel_pistol.png" id="2_yk1y1"]
+[ext_resource type="PackedScene" uid="uid://cftclvctilfi1" path="res://scenes/characters/loverboy.tscn" id="4_t0t43"]
+[ext_resource type="PackedScene" uid="uid://cqm1pe1guswge" path="res://scenes/ui/dialogue_box.tscn" id="5_yk1y1"]
 
 [node name="ShootingRange" type="Node2D" unique_id=1462290802]
+script = ExtResource("1_t0t43")
+
+[node name="Environment" type="StaticBody2D" parent="." unique_id=1930147747]
+
+[node name="RangeBackground" type="Sprite2D" parent="Environment" unique_id=252370823]
+position = Vector2(552.5, 356.5)
+scale = Vector2(0.7871093, 0.6982422)
+texture = ExtResource("1_ldnpn")
+
+[node name="PixelPistol" type="Sprite2D" parent="Environment" unique_id=709404934]
+position = Vector2(162, 395.00003)
+rotation = -0.64751714
+scale = Vector2(0.07331205, 0.07536418)
+texture = ExtResource("2_yk1y1")
+
+[node name="RightCornerProps" type="CollisionPolygon2D" parent="Environment" unique_id=1426665771]
+polygon = PackedVector2Array(904, 633, 912, 582, 950, 577, 950, 577, 949, 553, 1037, 552, 1025, 480, 1052, 454, 1059, 427, 1094, 420, 1149, 431, 1150, 643)
+
+[node name="GameBoundaries" type="StaticBody2D" parent="." unique_id=1655070807]
+
+[node name="FiringLine" type="CollisionPolygon2D" parent="GameBoundaries" unique_id=851427470]
+position = Vector2(0, 36)
+polygon = PackedVector2Array(-18, 239, 1171, 250, 1171, 298, -18, 283)
+
+[node name="RightBoundary" type="CollisionPolygon2D" parent="GameBoundaries" unique_id=917134451]
+polygon = PackedVector2Array(1139, -11, 1145, 736, 1176, 731, 1173, -19)
+
+[node name="BottomBoundary" type="CollisionPolygon2D" parent="GameBoundaries" unique_id=1952047777]
+polygon = PackedVector2Array(-22, 634, -20, 667, 1186, 667, 1190, 636)
+
+[node name="LeftBoundary" type="CollisionPolygon2D" parent="GameBoundaries" unique_id=1949396481]
+polygon = PackedVector2Array(11, 475, -32, 471, -32, -14, 6, -14)
+
+[node name="WelcomeExitBoundary" type="CollisionPolygon2D" parent="GameBoundaries" unique_id=1735084478]
+polygon = PackedVector2Array(-35, 465, 11, 465, 2, 678, -40, 677)
 
 [node name="Bel" parent="." unique_id=1496050138 instance=ExtResource("1_mvt21")]
-position = Vector2(534, 275)
+position = Vector2(331, 614)
+
+[node name="Loverboy" parent="." unique_id=985468098 instance=ExtResource("4_t0t43")]
+position = Vector2(237, 617)
+
+[node name="DialogueBox" parent="." unique_id=497366372 instance=ExtResource("5_yk1y1")]
+offset_left = 271.0
+offset_top = 519.0
+offset_right = 271.0
+offset_bottom = 519.0
+
+[node name="BelSeat" type="Marker2D" parent="." unique_id=1273867907]
+position = Vector2(740, 391)
+
+[node name="RangeExit" type="Area2D" parent="." unique_id=1397618139]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RangeExit" unique_id=469738139]
+polygon = PackedVector2Array(-29, 485, -23, 658, -162, 657, -165, 480)
+
+[node name="RiflePickup" type="Area2D" parent="." unique_id=842635800]
+
+[node name="GunTable" type="CollisionPolygon2D" parent="RiflePickup" unique_id=966024907]
+polygon = PackedVector2Array(90, 342, 83, 438, 188, 444, 194, 359)
+
+[node name="LaneTrigger" type="Area2D" parent="." unique_id=879097964]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LaneTrigger" unique_id=821235589]
+polygon = PackedVector2Array(410, 335, 413, 440, 694, 448, 698, 345)
+
+[connection signal="body_entered" from="RangeExit" to="." method="_on_range_exit_body_entered"]
