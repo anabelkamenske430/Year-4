@@ -57,7 +57,7 @@ func react_to_shooting_result(result):
 			DialogueManager.start_dialogue([
 				{
 					"speaker": "Bel",
-					"text": "...Should I be conserned for my well being?"
+					"text": "...Should I be concerned for my well being?"
 				},
 				{
 					"event": "next_shot"
@@ -102,26 +102,14 @@ func receive_shooting_result(result):
 		DialogueManager.start_dialogue([
 			{
 				"speaker": "Bel",
-				"text": "Looks like we're done bowling."
-			},
-			{
-				"speaker": "Bel",
-				"text": "Well that was fun, I totally kicked your ass"
+				"text": "Okay, can I try?"
 			},
 			{
 				"speaker": "Loverboy",
-				"text": "The lane was totally rigged"
+				"text": "Sure! Just make sure to.."
 			},
 			{
-				"speaker": "Bel",
-				"text": "Sureee it was Loverboy"
-			},
-			{
-				"speaker": "Bel",
-				"text": "Let's blow this popsicle stand!"
-			},
-			{
-				"event": "finish_bowling"
+				"event": "bel_goes_feral"
 			}
 		])
 		return
@@ -132,6 +120,48 @@ func next_shot():
 
 	print("Starting next shot")
 	$ShootingMinigame.start_game()
+
+func start_bel_chaos():
+
+	$Bel.move_to_position($BelChaos1.global_position)
+	await $Bel.wait_until_arrived()
+	DialogueManager.start_dialogue([
+		{
+			"speaker": "Bel",
+			"text": "PEW. PEW."
+		}
+	])
+	await DialogueManager.dialogue_finished
+
+	$Bel.move_to_position($BelChaos2.global_position)
+	await $Bel.wait_until_arrived()
+	DialogueManager.start_dialogue([
+		{
+			"speaker": "Bel",
+			"text": "WAIT THERE'S MORE."
+		}
+	])
+	await DialogueManager.dialogue_finished
+
+	$Bel.move_to_position($BelChaos3.global_position)
+	await $Bel.wait_until_arrived()
+	DialogueManager.start_dialogue([
+	{
+		"speaker": "Bel",
+		"text": "LOOK I HIT ONE."
+	},
+	{
+		"speaker": "Bel",
+		"text": "I WANT ONE!!!"
+	},
+	{
+		"speaker": "Loverboy",
+		"text": "Bel..."
+	},
+	{
+		"event": "finish_shooting"
+	}
+	])
 
 func finish_shooting():
 	$AchievementPopup.show_achievement(
@@ -150,7 +180,7 @@ func _on_range_exit_body_entered(body: Node2D) -> void:
 	if exit_locked:
 		print("EXIT LOCKED")
 		return
-	print("LOVERBOY EXITED THE BOWLING ALLEY")
+	print("LOVERBOY EXITED THE GUN RANGE")
 		
 	##get_tree().change_scene_to_file(
 	##	"res://scenes/levels/shooting_range.tscn"

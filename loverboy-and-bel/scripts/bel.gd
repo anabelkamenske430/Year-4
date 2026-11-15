@@ -99,3 +99,8 @@ func update_walk_animation(direction: Vector2):
 	else:
 		animated_sprite.flip_h = false
 		animated_sprite.play("walk_down")
+
+func wait_until_arrived():
+
+	while is_moving:
+		await get_tree().process_frame

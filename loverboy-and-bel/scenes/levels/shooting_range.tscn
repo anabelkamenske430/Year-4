@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://45qx3rx75jnc" path="res://assets/environments/pixel_pistol.png" id="2_yk1y1"]
 [ext_resource type="PackedScene" uid="uid://cftclvctilfi1" path="res://scenes/characters/loverboy.tscn" id="4_t0t43"]
 [ext_resource type="PackedScene" uid="uid://cqm1pe1guswge" path="res://scenes/ui/dialogue_box.tscn" id="5_yk1y1"]
+[ext_resource type="PackedScene" uid="uid://cp1mcx1esoacn" path="res://scenes/levels/shooting_minigame.tscn" id="7_ccbyl"]
+[ext_resource type="Script" uid="uid://bdky2med672at" path="res://scripts/range_trigger.gd" id="7_lbw23"]
+[ext_resource type="Script" uid="uid://cmenya8i40ls3" path="res://scripts/rifle_pickup.gd" id="7_p1xnq"]
+[ext_resource type="PackedScene" uid="uid://bn0xvdy32aunp" path="res://scenes/ui/achievement_popup.tscn" id="10_uad43"]
 
 [node name="ShootingRange" type="Node2D" unique_id=1462290802]
 script = ExtResource("1_t0t43")
@@ -65,13 +69,36 @@ position = Vector2(740, 391)
 polygon = PackedVector2Array(-29, 485, -23, 658, -162, 657, -165, 480)
 
 [node name="RiflePickup" type="Area2D" parent="." unique_id=842635800]
+script = ExtResource("7_p1xnq")
 
 [node name="GunTable" type="CollisionPolygon2D" parent="RiflePickup" unique_id=966024907]
 polygon = PackedVector2Array(90, 342, 83, 438, 188, 444, 194, 359)
 
-[node name="LaneTrigger" type="Area2D" parent="." unique_id=879097964]
+[node name="RangeTrigger" type="Area2D" parent="." unique_id=879097964]
+script = ExtResource("7_lbw23")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LaneTrigger" unique_id=821235589]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RangeTrigger" unique_id=821235589]
 polygon = PackedVector2Array(410, 335, 413, 440, 694, 448, 698, 345)
+
+[node name="ShootingMinigame" parent="." unique_id=2132621044 instance=ExtResource("7_ccbyl")]
+offset_left = 419.0
+offset_top = 139.0
+offset_right = 709.0
+offset_bottom = 245.0
+
+[node name="BelChaos1" type="Marker2D" parent="." unique_id=1650607926]
+position = Vector2(256, 379)
+
+[node name="BelChaos2" type="Marker2D" parent="." unique_id=626661029]
+position = Vector2(545, 379)
+
+[node name="BelChaos3" type="Marker2D" parent="." unique_id=461409527]
+position = Vector2(819, 392)
+
+[node name="AchievementPopup" parent="." unique_id=1085326658 instance=ExtResource("10_uad43")]
+offset_left = -13.0
+offset_top = -16.0
+offset_right = -13.0
+offset_bottom = -16.0
 
 [connection signal="body_entered" from="RangeExit" to="." method="_on_range_exit_body_entered"]

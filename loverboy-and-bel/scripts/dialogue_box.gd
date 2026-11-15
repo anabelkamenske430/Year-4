@@ -138,6 +138,8 @@ func advance_dialogue():
 				get_tree().current_scene.start_range_game()
 			"next_shot":
 				get_tree().current_scene.next_shot()
+			"bel_goes_feral":
+				get_tree().current_scene.start_bel_chaos()
 			"finish_shooting":
 				get_tree().current_scene.finish_shooting()
 		hide_dialogue()

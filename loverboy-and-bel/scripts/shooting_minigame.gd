@@ -39,7 +39,7 @@ func _unhandled_input(event):
 		await get_tree().create_timer(1.5).timeout
 		print("Ready for next step")
 		
-		get_tree().current_scene.receive_bowling_result(result)
+		get_tree().current_scene.receive_shooting_result(result)
 		hide()
 		
 func start_game():
