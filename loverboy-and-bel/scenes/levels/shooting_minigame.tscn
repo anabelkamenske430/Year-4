@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cp1mcx1esoacn"]
 
 [ext_resource type="Script" uid="uid://cwxfgeah0q357" path="res://scripts/shooting_minigame.gd" id="1_en6ie"]
+[ext_resource type="Texture2D" uid="uid://bxktemaev5fvu" path="res://assets/environments/range_target.png" id="2_h1nmo"]
 
 [node name="ShootingMinigame" type="Control" unique_id=2132621044]
 layout_mode = 3
@@ -11,11 +12,12 @@ script = ExtResource("1_en6ie")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=769457554]
 layout_mode = 0
-offset_right = 288.0
-offset_bottom = 104.0
+offset_right = 280.0
+offset_bottom = 221.0
 color = Color(0.570368, 0.48468113, 0.3027589, 1)
 
 [node name="AccuracyBar" type="ProgressBar" parent="." unique_id=1359625311]
+visible = false
 layout_mode = 0
 offset_left = 14.0
 offset_top = 54.0
@@ -23,15 +25,22 @@ offset_right = 264.0
 offset_bottom = 85.0
 show_percentage = false
 
+[node name="RangeTarget" type="Sprite2D" parent="." unique_id=952282275]
+position = Vector2(133, 129)
+scale = Vector2(0.1818182, 0.15829347)
+texture = ExtResource("2_h1nmo")
+
 [node name="Marker" type="Label" parent="." unique_id=1934798212]
 layout_mode = 0
-offset_left = 127.0
-offset_top = 71.0
-offset_right = 152.0
-offset_bottom = 111.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 29
-text = "^"
+offset_left = 121.0
+offset_top = 103.0
+offset_right = 144.0
+offset_bottom = 160.0
+theme_override_colors/font_color = Color(4.6205523e-06, 0.8590754, 0.26095018, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 41
+text = "+"
 
 [node name="ResultLabel" type="Label" parent="." unique_id=1020131359]
 layout_mode = 0

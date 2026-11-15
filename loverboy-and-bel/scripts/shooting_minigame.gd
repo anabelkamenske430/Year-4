@@ -1,16 +1,18 @@
 extends Control
 
 @onready var marker = $Marker
-@onready var accuracy_bar = $AccuracyBar
+@onready var target = $RangeTarget
 @onready var result_label = $ResultLabel
 
 var move_speed = 300.0
 var direction = 1
 var marker_position = 0.0
 var game_active = true
+var target_width = 0.00
 
 func _ready():
 	hide()
+	target_width = target.texture.get_width() * target.scale.x
 	result_label.text = "Waiting..."
 
 func _process(delta):
@@ -19,7 +21,7 @@ func _process(delta):
 		
 	marker.position.x += move_speed * direction * delta
 
-	if marker.position.x >= accuracy_bar.size.x:
+	if marker.position.x >= target_width:
 		direction = -1
 
 	if marker.position.x <= 0:
@@ -53,7 +55,7 @@ func start_game():
 
 func calculate_result():
 
-	var percent = marker.position.x / accuracy_bar.size.x
+	var percent = marker.position.x / target_width
 
 	if percent < 0.15:
 		return "MISS"

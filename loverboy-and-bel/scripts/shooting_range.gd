@@ -182,6 +182,6 @@ func _on_range_exit_body_entered(body: Node2D) -> void:
 		return
 	print("LOVERBOY EXITED THE GUN RANGE")
 		
-	##get_tree().change_scene_to_file(
-	##	"res://scenes/levels/shooting_range.tscn"
-	##) Replace with function body.
+	get_tree().change_scene_to_file(
+		"res://scenes/levels/outside_house.tscn"
+	)

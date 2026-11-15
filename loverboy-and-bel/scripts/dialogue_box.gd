@@ -142,6 +142,8 @@ func advance_dialogue():
 				get_tree().current_scene.start_bel_chaos()
 			"finish_shooting":
 				get_tree().current_scene.finish_shooting()
+			"exit_truck":
+				get_tree().current_scene.exit_truck()
 		hide_dialogue()
 		return
 		

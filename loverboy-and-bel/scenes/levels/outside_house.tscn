@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://sp7fae1x0x7t"]
+
+[ext_resource type="Script" uid="uid://co6xog74avrps" path="res://scripts/outside_house.gd" id="1_lqdgi"]
+[ext_resource type="Texture2D" uid="uid://c1cobuo4gwc8q" path="res://assets/environments/outside_house_scene.png" id="1_lx655"]
+[ext_resource type="Texture2D" uid="uid://dob80wov82ki5" path="res://assets/environments/bel_and_loverboy_in_truck.png" id="2_lqdgi"]
+[ext_resource type="PackedScene" uid="uid://cqm1pe1guswge" path="res://scenes/ui/dialogue_box.tscn" id="3_0uqpj"]
+[ext_resource type="PackedScene" uid="uid://bfrjo0u7e4fq" path="res://scenes/characters/bel.tscn" id="5_flg71"]
+[ext_resource type="PackedScene" uid="uid://cftclvctilfi1" path="res://scenes/characters/loverboy.tscn" id="6_eu45v"]
+
+[node name="OutsideHouse" type="Node2D" unique_id=463626275]
+script = ExtResource("1_lqdgi")
+
+[node name="HouseBackground" type="Sprite2D" parent="." unique_id=810188169]
+position = Vector2(532.5, 349.25)
+scale = Vector2(0.81315106, 0.69677734)
+texture = ExtResource("1_lx655")
+
+[node name="OccupiedTruck" type="Sprite2D" parent="." unique_id=232316611]
+position = Vector2(191.00002, 318)
+scale = Vector2(0.19270834, 0.20849608)
+texture = ExtResource("2_lqdgi")
+
+[node name="DialogueBox" parent="." unique_id=497366372 instance=ExtResource("3_0uqpj")]
+offset_left = 225.0
+offset_top = 502.0
+offset_right = 225.0
+offset_bottom = 502.0
+
+[node name="Bel" parent="." unique_id=1496050138 instance=ExtResource("5_flg71")]
+position = Vector2(59, 373)
+
+[node name="Loverboy" parent="." unique_id=985468098 instance=ExtResource("6_eu45v")]
+position = Vector2(310, 383)
