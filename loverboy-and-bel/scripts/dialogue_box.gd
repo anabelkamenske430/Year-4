@@ -146,6 +146,11 @@ func advance_dialogue():
 				get_tree().current_scene.exit_truck()
 			"go_to_inside_house":
 				get_tree().current_scene.go_to_inside_house()
+			"ellen_surprise":
+				get_tree().current_scene.ellen_surprise()
+			"house_complete":
+				get_tree().current_scene.house_complete()
+			
 		hide_dialogue()
 		return
 		

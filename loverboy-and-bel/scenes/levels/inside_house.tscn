@@ -1,10 +1,57 @@
 [gd_scene format=3 uid="uid://ubvxhqm3mt6p"]
 
 [ext_resource type="Texture2D" uid="uid://d3jcu5d17fjmv" path="res://assets/environments/inside_house_scene.png" id="1_jef7r"]
+[ext_resource type="Script" uid="uid://dkstrufh4agih" path="res://scripts/inside_house.gd" id="1_pkqo8"]
+[ext_resource type="PackedScene" uid="uid://bfrjo0u7e4fq" path="res://scenes/characters/bel.tscn" id="3_3ypp6"]
+[ext_resource type="PackedScene" uid="uid://cftclvctilfi1" path="res://scenes/characters/loverboy.tscn" id="4_khmwt"]
+[ext_resource type="Texture2D" uid="uid://ckyiair3wnh1a" path="res://assets/characters/ellen_suprise.png" id="5_3ypp6"]
+[ext_resource type="PackedScene" uid="uid://cqm1pe1guswge" path="res://scenes/ui/dialogue_box.tscn" id="6_80hve"]
+[ext_resource type="PackedScene" uid="uid://bn0xvdy32aunp" path="res://scenes/ui/achievement_popup.tscn" id="7_o63m4"]
 
 [node name="InsideHouse" type="Node2D" unique_id=1692043211]
+script = ExtResource("1_pkqo8")
 
 [node name="InsideHouseScene" type="Sprite2D" parent="." unique_id=1433166303]
 position = Vector2(540.5, 339)
 scale = Vector2(0.8105469, 0.7109375)
 texture = ExtResource("1_jef7r")
+
+[node name="Bel" parent="." unique_id=1496050138 instance=ExtResource("3_3ypp6")]
+position = Vector2(392, 632)
+
+[node name="Loverboy" parent="." unique_id=985468098 instance=ExtResource("4_khmwt")]
+position = Vector2(512, 626)
+
+[node name="EllenSuprise" type="Sprite2D" parent="." unique_id=575492550]
+position = Vector2(520, 199)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_3ypp6")
+
+[node name="DialogueBox" parent="." unique_id=497366372 instance=ExtResource("6_80hve")]
+offset_left = 262.0
+offset_top = 517.0
+offset_right = 262.0
+offset_bottom = 517.0
+
+[node name="AchievementPopup" parent="." unique_id=1085326658 instance=ExtResource("7_o63m4")]
+offset_left = -17.0
+offset_top = -16.0
+offset_right = -17.0
+offset_bottom = -16.0
+
+[node name="FadeRect" type="ColorRect" parent="." unique_id=1487674911]
+modulate = Color(1, 1, 1, 0)
+z_index = 100
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="BelPosition" type="Marker2D" parent="." unique_id=630565491]
+position = Vector2(206, 404)
+
+[node name="LoverboyPosition" type="Marker2D" parent="." unique_id=1741790258]
+position = Vector2(666, 480)
