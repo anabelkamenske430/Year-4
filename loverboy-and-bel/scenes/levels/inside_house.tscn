@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ubvxhqm3mt6p"]
+
+[ext_resource type="Texture2D" uid="uid://d3jcu5d17fjmv" path="res://assets/environments/inside_house_scene.png" id="1_jef7r"]
+
+[node name="InsideHouse" type="Node2D" unique_id=1692043211]
+
+[node name="InsideHouseScene" type="Sprite2D" parent="." unique_id=1433166303]
+position = Vector2(540.5, 339)
+scale = Vector2(0.8105469, 0.7109375)
+texture = ExtResource("1_jef7r")

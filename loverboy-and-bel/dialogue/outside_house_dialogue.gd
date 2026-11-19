@@ -28,3 +28,26 @@ static func get_intro() -> Array:
 			"event": "exit_truck"
 		}
 	]
+
+static func get_door_dialogue():
+	return [
+		{
+			"speaker" : "Bel",
+			"text" : "No you didn't...."
+		},
+		{
+			"speaker" : "Loverboy",
+			"text" : "Come on"
+		},
+		{
+			"speaker" : "Bel",
+			"text" : "You're fucking joking right now"
+		},
+		{
+			"speaker" : "Loverboy",
+			"text" : "Only one way to really find out"
+		},
+		{
+			"event": "go_to_inside_house"
+		}
+	]

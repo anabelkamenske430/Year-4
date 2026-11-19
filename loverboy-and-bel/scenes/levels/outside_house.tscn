@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cqm1pe1guswge" path="res://scenes/ui/dialogue_box.tscn" id="3_0uqpj"]
 [ext_resource type="PackedScene" uid="uid://bfrjo0u7e4fq" path="res://scenes/characters/bel.tscn" id="5_flg71"]
 [ext_resource type="PackedScene" uid="uid://cftclvctilfi1" path="res://scenes/characters/loverboy.tscn" id="6_eu45v"]
+[ext_resource type="Texture2D" uid="uid://dta2fujl5laij" path="res://assets/environments/house_key.png" id="7_eu45v"]
 
 [node name="OutsideHouse" type="Node2D" unique_id=463626275]
 script = ExtResource("1_lqdgi")
@@ -31,3 +32,26 @@ position = Vector2(59, 373)
 
 [node name="Loverboy" parent="." unique_id=985468098 instance=ExtResource("6_eu45v")]
 position = Vector2(310, 383)
+
+[node name="HouseKey" type="Sprite2D" parent="." unique_id=1559402849]
+position = Vector2(512, 373.99997)
+scale = Vector2(0.09928235, 0.074162714)
+texture = ExtResource("7_eu45v")
+
+[node name="BelWaypoint1" type="Marker2D" parent="." unique_id=1877567100]
+position = Vector2(65, 440)
+
+[node name="BelWaypoint2" type="Marker2D" parent="." unique_id=1653021249]
+position = Vector2(472, 452)
+
+[node name="BelDoorPosition" type="Marker2D" parent="." unique_id=1316946080]
+position = Vector2(469, 368)
+
+[node name="LoverboyWaypoint1" type="Marker2D" parent="." unique_id=1437039766]
+position = Vector2(315, 444)
+
+[node name="LoverboyWaypoint2" type="Marker2D" parent="." unique_id=1506946162]
+position = Vector2(536, 449)
+
+[node name="LoverboyDoorPosition" type="Marker2D" parent="." unique_id=1438193685]
+position = Vector2(533, 371)

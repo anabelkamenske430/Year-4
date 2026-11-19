@@ -144,6 +144,8 @@ func advance_dialogue():
 				get_tree().current_scene.finish_shooting()
 			"exit_truck":
 				get_tree().current_scene.exit_truck()
+			"go_to_inside_house":
+				get_tree().current_scene.go_to_inside_house()
 		hide_dialogue()
 		return
 		
@@ -184,9 +186,8 @@ func _unhandled_input(event):
 		return
 
 	if event.is_action_pressed("interact"):
-		advance_dialogue()
 		get_viewport().set_input_as_handled()
-
+		advance_dialogue()
 
 func is_dialogue_active():
 	return visible
